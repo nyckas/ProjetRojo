@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      En ligne
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  <ion-list>
+    <button ion-item *ngFor="let pers of personnec">
+      <ion-avatar item-start >
+        <img src="assets/imgs/login.png">
+      </ion-avatar>
+      <h2>{{pers.nom}} {{pers.prenom}}</h2>
+      <p>En ligne<i class="icon ion-chevron-right icon-accessory"></i></p>  
+    </button>
+  </ion-list>
+</ion-content>

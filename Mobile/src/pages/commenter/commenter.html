@@ -1,0 +1,65 @@
+<!--
+  Generated template for the CommenterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Commentaire</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card >
+                
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/login.png">
+      </ion-avatar>
+      <h2>{{publication.auteur.nom}} {{publication.auteur.prenom}}</h2>
+      <p>{{publication.daty | date: 'yyyy-MM-dd'}}</p>
+    </ion-item>
+  
+    <ion-item>
+      <div>
+          <p>Titre: {{publication.titre}}</p>
+          <p>Interet: {{publication.interet.valeur}}</p>  
+          <p>Lieu: {{publication.lieu.lieu}}</p>  
+          <p><br/>{{publication.detail}}</p> 
+          <p><br/>Paff: {{publication.paff}} Ar</p>  
+      </div>
+    </ion-item>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{publication.jaime}} personne(s) aime ça</div>
+        </button>
+      </ion-col>
+    </ion-row>
+</ion-card>
+<ion-card *ngFor="let coms of listCommentaire">
+        <ion-item >
+          <ion-avatar item-start>
+            <img src="assets/imgs/login.png">
+          </ion-avatar>
+          <h2>{{coms.personne.nom}} {{coms.personne.prenom}}</h2>
+          <p>{{coms.commentaire}}</p>
+        </ion-item>
+</ion-card>
+</ion-content>
+
+<ion-footer ion-fixed id="myColor">    
+  <ion-toolbar class="no-border" color="white">        
+    <ion-input [(ngModel)]="comments.commentaire" placeholder="Ecrire ici votre commentaire ..."></ion-input>  
+    <ion-buttons end>
+      <button ion-button (click)="commenter()">
+        <ion-icon name="send" color="envoyer"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>    
+</ion-footer>

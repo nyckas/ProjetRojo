@@ -1,0 +1,25 @@
+<ion-content padding id="welcome">
+  <img src="assets/imgs/logoacc.png" width="1100" heigth="1100" class="logo"/>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h2>Bienvenue sur Plan'INONA</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid >
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button round block color="lightText" (click)="login()" outline>Se connecter</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col center text-center>
+          <button ion-button round block color="success" (click)="signup()" outline>S'inscrire</button>
+        </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

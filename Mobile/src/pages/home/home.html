@@ -1,0 +1,48 @@
+<ion-header id="home">
+  <ion-navbar>
+    <ion-title>
+      Acceuil
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="home">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+        <ion-card *ngFor="let publication of publications">
+                
+                  <ion-item>
+                    <ion-avatar item-start>
+                      <img src="assets/imgs/login.png">
+                    </ion-avatar>
+                    <h2>{{publication.auteur.nom}} {{publication.auteur.prenom}}</h2>
+                    <p>{{publication.daty | date: 'yyyy-MM-dd'}}</p>
+                  </ion-item>
+                
+                  <ion-card-content>
+                    <div>
+                        <p>Titre: {{publication.titre}}</p>
+                        <p>Interet: {{publication.interet.valeur}}</p>  
+                        <p>Lieu: {{publication.lieu.lieu}}</p>  
+                        <p><br/>{{publication.detail}}</p> 
+                        <p><br/>Paff: {{publication.paff}} Ar</p>  
+                    </div>
+                  </ion-card-content>
+                
+                  <ion-row>
+                    <ion-col>
+                      <button ion-button icon-left clear small (click)="jaimer(publication.id)">
+                        <ion-icon name="thumbs-up"></ion-icon>
+                        <p>{{publication.jaime}} J'aime</p>
+                      </button>
+                    </ion-col>
+                    <ion-col>
+                      <button ion-button icon-left clear small (click)="commenterPub(publication)">
+                        <ion-icon name="text"></ion-icon>
+                        <p>Commenter</p>
+                      </button>
+                    </ion-col>
+                  </ion-row>
+        </ion-card>
+</ion-content>

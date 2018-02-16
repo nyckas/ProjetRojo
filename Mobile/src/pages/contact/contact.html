@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Option
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  <ion-list no-border>
+
+    <ion-list-header>
+      Mon compte
+    </ion-list-header>
+
+    <button ion-item>
+      <ion-icon name='contact' item-start></ion-icon>
+      Mon profil
+    </button>
+
+    <button ion-item>
+      <ion-icon name='settings' item-start></ion-icon>
+        Modifier mon profil
+    </button>
+
+    <button ion-item>
+      <ion-icon name='search' item-start></ion-icon>
+        Rechercher un ami
+    </button>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-list-header>
+      Activité
+    </ion-list-header>
+
+    <button ion-item (click)="listInvitation()">
+      <ion-icon name='bookmark' item-start></ion-icon>
+        Invitations
+      <ion-badge item-end color="notification">{{nbInvitations}}</ion-badge>
+    </button>
+
+    <button ion-item (click)="creerPlan()">
+      <ion-icon name='clipboard' item-start></ion-icon>
+        Creer un plan  
+    </button>
+  </ion-list>
+
+  <ion-list>
+
+    <ion-list-header>
+      Se déconnecter
+    </ion-list-header>
+    <button ion-item (click)="logout()">
+      <ion-icon name='log-out' item-start></ion-icon>
+        Deconnexion
+    </button>
+  </ion-list>
+</ion-content>
